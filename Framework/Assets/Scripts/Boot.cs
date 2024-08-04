@@ -3,13 +3,10 @@ using zFramework;
 
 public class Boot : MonoBehaviour
 {
-    private LuaManager _luaManager;
+    private readonly LuaManager _luaManager = LuaManager.GetInstance();
 
     void Awake()
     {
-        _luaManager = LuaManager.GetInstance();
-        _luaManager.Bind();
-
         _luaManager.Awake();
     }
 

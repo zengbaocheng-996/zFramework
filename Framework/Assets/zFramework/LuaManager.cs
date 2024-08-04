@@ -10,61 +10,63 @@ namespace zFramework
 {
     public class LuaManager
     {
-        private string _mainFileName = "main";
+        private readonly string _mainFileName = "main";
 
         private static LuaManager _luaManager;
 
         private readonly LuaEnv _luaenv;
+        private LuaTable _mainEnv;
 
-        private Action _luaAwake;
-        private Action _luaStart;
-        private Action _luaUpdate;
-        private Action _luaOnDestroy;
+        private Action _mainAwake;
+        private Action _mainStart;
+        private Action _mainUpdate;
+        private Action _mainOnDestroy;
 
-        public void RequireMain()
+        private void BindEventFunctions()
         {
-            _luaenv.DoString("require '" + _mainFileName + "'");
+            _mainEnv.Get("Awake", out _mainAwake);
+            _mainEnv.Get("Start", out _mainStart);
+            _mainEnv.Get("Update", out _mainUpdate);
+            _mainEnv.Get("OnDestroy", out _mainOnDestroy);
         }
 
-        public void BindEventFunctions()
+        private void SetMainEnv()
         {
-            _luaenv.Global.Get("Awake",     out _luaAwake);
-            _luaenv.Global.Get("Start",     out _luaStart);
-            _luaenv.Global.Get("Update",    out _luaUpdate);
-            _luaenv.Global.Get("OnDestroy", out _luaOnDestroy);
-        }
-
-        public void Bind()
-        {
-            RequireMain();
-            BindEventFunctions();
+            _mainEnv = _luaenv.NewTable();
+            LuaTable meta = _luaenv.NewTable();
+            meta.Set("__index", _luaenv.Global);
+            _mainEnv.SetMetaTable(meta);
+            meta.Dispose();
+            _mainEnv.Set("self", this);
+            _luaenv.DoString("require '" + _mainFileName + "'", _mainFileName, _mainEnv);
         }
 
         public void Awake()
         {
-            _luaAwake();
+            SetMainEnv();
+            BindEventFunctions();
+            _mainAwake();
         }
 
         public void Start()
         {
-            _luaStart();
+            _mainStart();
         }
 
         public void Update()
         {
-            _luaUpdate();
+            _mainUpdate();
             _luaenv.Tick();
         }
 
         public void OnDestroy()
         {
-            _luaOnDestroy();
-            _luaAwake     = null;
-            _luaStart     = null;
-            _luaUpdate    = null;
-            _luaOnDestroy = null;
-            // _luaenv = null;
-            // _luaenv.Dispose();
+            _mainOnDestroy();
+            _mainAwake = null;
+            _mainStart = null;
+            _mainUpdate = null;
+            _mainOnDestroy = null;
+            _mainEnv.Dispose();
         }
 
         private LuaManager()
@@ -94,6 +96,7 @@ namespace zFramework
             {
                 Debug.LogError(path + "doesn't exist!");
             }
+
             return null;
         }
     }
