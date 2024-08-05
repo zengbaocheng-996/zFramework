@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 7b5275b2d68b4bd4db48dda86f2a9887
+labels:
+- Scene
 DefaultImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  assetBundleName: scenes
+  assetBundleVariant: test

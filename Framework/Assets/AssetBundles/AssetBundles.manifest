@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 537088803
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scenes.boot
+      Dependencies: {}
+    Info_1:
+      Name: scenes.test
+      Dependencies: {}
