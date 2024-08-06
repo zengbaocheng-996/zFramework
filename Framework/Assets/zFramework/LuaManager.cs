@@ -94,7 +94,7 @@ namespace zFramework
             }
             else
             {
-                Debug.LogError(path + "doesn't exist!");
+                Debug.LogError(path + " doesn't exist!");
             }
 
             return null;

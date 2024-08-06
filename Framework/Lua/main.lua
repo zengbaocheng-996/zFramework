@@ -1,19 +1,28 @@
-local uiManger    = require("ui/uiManager")
-local sceneManger = require("scene/sceneManager")
-local assetManger = require("asset/assetManager")
+local system = require("system")
+local profiler = require("profiler")
 
 function Awake()
-	uiManger.Awake()
-	sceneManger.Awake()
-	assetManger.Awake()
+	system.Awake()
 end
 
 function Start()
 	-- print("lua start...")
 end
 
+local function profilerTest()
+    local sum = 0
+    for i = 1, 100000 do
+        sum = sum + i
+    end
+    while sum > 1 do
+        sum = sum / 2
+    end
+end
+
 function Update()
-    -- print("lua update...")
+    profiler.BeginSample("LuaUpdate")
+    profilerTest()
+    profiler.EndSample()
 end
 
 function OnDestroy()

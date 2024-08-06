@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace zFramework
 {
-    public static class AssetBundleUtils
+    public static class AssetBundleManager
     {
         public static AssetBundle LoadFromFile()
         {

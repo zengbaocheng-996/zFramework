@@ -1,11 +1,10 @@
+local mananger = require("module/manager")
+local sceneManager = mananger:New()
+
 local SceneManagement = CS.UnityEngine.SceneManagement
 local SceneManager    = SceneManagement.SceneManager
-local assetManger = require("asset/assetManager")
-
-local sceneManager = {}
 
 function sceneManager.Awake()
-    print("sceneManager Awake")
 end
 
 function sceneManager.LoadScene(nextSceneName)
