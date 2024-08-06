@@ -1,4 +1,4 @@
-local system = require("system")
+local system = require("system/system")
 local profiler = require("profiler")
 
 function Awake()

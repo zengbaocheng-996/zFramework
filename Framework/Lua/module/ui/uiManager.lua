@@ -4,7 +4,7 @@ local uiManager = mananger:New()
 local GameObject = CS.UnityEngine.GameObject
 local TransformManager = CS.zFramework.TransformManager
 local FindButton = TransformManager.FindButton
-local system_enum = require("system_enum")
+local system_enum = require("system/system_enum")
 local sceneManager = require(system_enum.manager.sceneManager)
 function uiManager.Awake()
     local Button = FindButton("Button")
