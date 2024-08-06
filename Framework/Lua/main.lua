@@ -9,20 +9,25 @@ function Start()
 	-- print("lua start...")
 end
 
-local function profilerTest()
-    local sum = 0
-    for i = 1, 100000 do
-        sum = sum + i
-    end
-    while sum > 1 do
-        sum = sum / 2
-    end
-end
+-- region profiler example
+-- local function profilerTest()
+--     local sum = 0
+--     for i = 1, 100000 do
+--         sum = sum + i
+--     end
+--     while sum > 1 do
+--         sum = sum / 2
+--     end
+-- end
+-- endregion
 
 function Update()
-    profiler.BeginSample("LuaUpdate")
-    profilerTest()
-    profiler.EndSample()
+    -- region profiler example
+    -- profiler.BeginSample("LuaUpdate")
+    -- profilerTest()
+    -- profiler.EndSample()
+    -- endregion
+
 end
 
 function OnDestroy()
