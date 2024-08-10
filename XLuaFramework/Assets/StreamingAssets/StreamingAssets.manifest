@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 2105815129
+CRC: 2037831182
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
+      Name: cube.prefab.ab
+      Dependencies: {}
+    Info_1:
       Name: model/new material.mat.ab
       Dependencies: {}

@@ -1,0 +1,2 @@
+Assets/BuildResources/Cube.prefab|cube.prefab
+Assets/BuildResources/Model/New Material.mat|model/new material.mat
