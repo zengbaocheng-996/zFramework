@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 2105815129
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: model/new material.mat.ab
+      Dependencies: {}
