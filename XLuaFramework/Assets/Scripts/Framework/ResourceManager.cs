@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System;
 using UObject = UnityEngine.Object;
+using UnityEditor;
 public class ResourceManager : MonoBehaviour
 {
     internal class BundleInfo
@@ -46,6 +47,7 @@ public class ResourceManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator LoadBundleAsync(string assetName, Action<UObject> action = null)
     {
+        Debug.Log("LoadBundleAsync");
         string bundleName = m_BundleInfos[assetName].BundleName;
         string bundlePath = Path.Combine(PathUtil.BundleResourcePath, bundleName);
         List<string> dependences = m_BundleInfos[assetName].Dependences;
@@ -67,22 +69,52 @@ public class ResourceManager : MonoBehaviour
         //}
         action?.Invoke(bundleRequest?.asset);
     }
-
-    public void LoadAsset(string assetName,Action<UObject>action)
+    /// <summary>
+    /// 编辑器环境加载资源
+    /// </summary>
+    /// <param name="assetName"></param>
+    /// <param name="action"></param>
+    void EditorLoadAsset(string assetName, Action<UObject> action = null)
     {
-        StartCoroutine(LoadBundleAsync(assetName,action));
+        Debug.Log("EditorLoadAsset");
+        UObject obj = AssetDatabase.LoadAssetAtPath(assetName, typeof(UObject));
+        if (obj == null)
+        {
+            Debug.LogError("assets name is not exist: " + assetName);
+        }
+        action?.Invoke(obj);
     }
+
+    private void LoadAsset(string assetName,Action<UObject>action)
+    {
+        if(AppConst.GameMode == GameMode.EditorMode)
+        {
+            EditorLoadAsset(assetName, action);
+        }
+        else
+        {
+            StartCoroutine(LoadBundleAsync(assetName, action));         
+        }
+    }
+    //Tag:卸载在那时不做
     void Start()
     {
         ParseVersionFile();
-        LoadAsset("Assets/BuildResources/Cube.prefab",OnComplete);
+        LoadTest("Cube", OnComplete);
     }
-
     private void OnComplete(UObject obj)
     {
         GameObject go = Instantiate(obj) as GameObject;
         go.transform.SetParent(transform);
         go.SetActive(true);
         go.transform.localPosition = Vector3.zero;
+    }
+    public void LoadUI(string assetName,Action<UObject>action = null)
+    {
+        LoadAsset(PathUtil.GetUIPath(assetName), action);
+    }    
+    public void LoadTest(string assetName, Action<UObject>action = null)
+    {
+        LoadAsset(PathUtil.GetTestPath(assetName), action);
     }
 }
