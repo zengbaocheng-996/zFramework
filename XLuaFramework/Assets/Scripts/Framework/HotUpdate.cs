@@ -169,6 +169,7 @@ public class HotUpdate : MonoBehaviour
     }
     private void EnterGame()
     {
+        Manager.Resource.ParseVersionFile();
         Manager.Resource.LoadTest("Cube",OnComplete);
     }
     private void OnComplete(UnityEngine.Object obj)
