@@ -18,7 +18,7 @@ public class ResourceManager : MonoBehaviour
     /// <summary>
     /// 解析版本文件
     /// </summary>
-    private void ParseVersionFile()
+    public void ParseVersionFile()
     {
         //版本文件的路径
         string url = Path.Combine(PathUtil.BundleResourcePath, AppConst.FileListName);
@@ -97,11 +97,7 @@ public class ResourceManager : MonoBehaviour
         }
     }
     //Tag:卸载在那时不做
-    void Start()
-    {
-        ParseVersionFile();
-        LoadTest("Cube", OnComplete);
-    }
+
     private void OnComplete(UObject obj)
     {
         GameObject go = Instantiate(obj) as GameObject;

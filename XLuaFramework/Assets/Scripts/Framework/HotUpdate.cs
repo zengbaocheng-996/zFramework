@@ -116,6 +116,7 @@ public class HotUpdate : MonoBehaviour
 
     private void OnReleaseFileComplete(DownFileInfo fileInfo)
     {
+        Debug.Log("OnReleaseFileComplete:" +fileInfo.url);
         string writeFile = Path.Combine(PathUtil.ReadWritePath, fileInfo.fileName);
         FileUtil.WriteFile(writeFile,fileInfo.fileData.data);
     }
@@ -152,10 +153,7 @@ public class HotUpdate : MonoBehaviour
         }
     }
 
-    private void EnterGame()
-    {
-        throw new NotImplementedException();
-    }
+
 
     private void OnUpdateAllFileComplete()
     {
@@ -165,7 +163,19 @@ public class HotUpdate : MonoBehaviour
 
     private void OnUpdateFileComplete(DownFileInfo fileInfo)
     {
+        Debug.Log("OnUpdateFileComplete:" +fileInfo.url);
         string writeFile = Path.Combine(PathUtil.ReadWritePath, fileInfo.fileName);
         FileUtil.WriteFile(writeFile,fileInfo.fileData.data);
+    }
+    private void EnterGame()
+    {
+        Manager.Resource.LoadTest("Cube",OnComplete);
+    }
+    private void OnComplete(UnityEngine.Object obj)
+    {
+        GameObject go = Instantiate(obj) as GameObject;
+        go.transform.SetParent(transform);
+        go.SetActive(true);
+        go.transform.localPosition = Vector3.zero;
     }
 }
