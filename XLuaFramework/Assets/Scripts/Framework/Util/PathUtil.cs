@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class PathUtil
 {
-    //¸ùÄ¿Â¼
+    //æ ¹ç›®å½•
     public static readonly string AssetPath = Application.dataPath;
 
-    //ĞèÒª´òbundleµÄÄ¿Â¼
+    //éœ€è¦æ‰“bundleçš„ç›®å½•
     public static readonly string BuildResourcesPath = AssetPath + "/BuildResources/";
     
-    //bundleÊä³öÄ¿Â¼
+    //bundleè¾“å‡ºç›®å½•
     public static readonly string BundleOutPath = Application.streamingAssetsPath;
 
-    //bundle×ÊÔ´Â·¾¶
+    //å¯è¯»å†™ç›®å½•
+    public static readonly string ReadPath = Application.streamingAssetsPath;
+    //å¯è¯»å†™ç›®å½•
+    public static readonly string ReadWritePath = Application.persistentDataPath;
+    //bundleèµ„æºè·¯å¾„
     public static string BundleResourcePath
     {
-        get { return Application.streamingAssetsPath; }
+        get
+        {
+            if (AppConst.GameMode == GameMode.UpdateMode)
+                return Application.persistentDataPath;
+            return Application.streamingAssetsPath;
+        }
     }
 
     /// <summary>
-    /// »ñÈ¡UnityµÄÏà¶ÔÂ·¾¶
+    /// è·å–Unityçš„ç›¸å¯¹è·¯å¾„
     /// </summary>
     /// <param name="path"></param>
     /// <returns></returns>
@@ -32,7 +41,7 @@ public class PathUtil
     }
 
     /// <summary>
-    /// »ñÈ¡±ê×¼Â·¾¶
+    /// è·å–æ ‡å‡†è·¯å¾„
     /// </summary>
     /// <param name="path"></param>
     /// <returns></returns>
