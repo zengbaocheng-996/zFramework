@@ -1,3 +1,5 @@
 Assets/BuildResources/Cube.prefab|cube.prefab.ab
 Assets/BuildResources/LuaScripts/main.bytes|luascripts/main.bytes.ab
 Assets/BuildResources/Model/New Material.mat|model/new material.mat.ab
+Assets/BuildResources/LuaScripts/ui/TestUI.bytes|luascripts/ui/testui.bytes.ab
+Assets/BuildResources/UI/Prefabs/TestUI.prefab|ui/prefabs/testui.prefab.ab

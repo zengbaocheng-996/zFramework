@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 371999459
+CRC: 4251745676
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -10,4 +10,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_2:
       Name: model/new material.mat.ab
+      Dependencies: {}
+    Info_3:
+      Name: luascripts/ui/testui.bytes.ab
+      Dependencies: {}
+    Info_4:
+      Name: ui/prefabs/testui.prefab.ab
       Dependencies: {}

@@ -17,6 +17,5 @@ public class GameStart : MonoBehaviour
                 XLua.LuaFunction func = Manager.Lua.LuaEnv.Global.Get<XLua.LuaFunction>("Main");
                 func.Call();
             });
-        
     }
 }
