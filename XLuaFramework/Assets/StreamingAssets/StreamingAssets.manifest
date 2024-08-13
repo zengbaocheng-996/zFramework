@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 4251745676
+CRC: 3094777823
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -16,4 +16,13 @@ AssetBundleManifest:
       Dependencies: {}
     Info_4:
       Name: ui/prefabs/testui.prefab.ab
+      Dependencies: {}
+    Info_5:
+      Name: "ui/prefabs/\u4E00\u7EA7\u754C\u9762.prefab.ab"
+      Dependencies: {}
+    Info_6:
+      Name: "ui/prefabs/\u4E8C\u7EA7\u5F39\u7A97.prefab.ab"
+      Dependencies: {}
+    Info_7:
+      Name: "ui/prefabs/\u8DD1\u9A6C\u706F.prefab.ab"
       Dependencies: {}

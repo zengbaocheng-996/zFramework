@@ -290,6 +290,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1719963930}
+  - {fileID: 1429189375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242529983
@@ -373,7 +374,7 @@ GameObject:
   - component: {fileID: 1429189373}
   - component: {fileID: 1429189372}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +455,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1097404251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -619,6 +620,5 @@ SceneRoots:
   - {fileID: 394834916}
   - {fileID: 2085601579}
   - {fileID: 628038935}
-  - {fileID: 1097404251}
-  - {fileID: 1429189375}
   - {fileID: 1242529986}
+  - {fileID: 1097404251}
