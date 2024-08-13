@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 371999459
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: cube.prefab.ab
+      Dependencies: {}
+    Info_1:
+      Name: luascripts/main.bytes.ab
+      Dependencies: {}
+    Info_2:
+      Name: model/new material.mat.ab
+      Dependencies: {}

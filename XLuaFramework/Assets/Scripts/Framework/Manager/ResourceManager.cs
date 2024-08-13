@@ -36,7 +36,11 @@ public class ResourceManager : MonoBehaviour
             {
                 bundleInfo.Dependences.Add(info[j]);
             }
-            m_BundleInfos.Add(bundleInfo.AssetsName,bundleInfo);
+            // m_BundleInfos.TryAdd(bundleInfo.AssetsName,bundleInfo);
+            Debug.LogWarning(bundleInfo.AssetsName);
+            m_BundleInfos[bundleInfo.AssetsName]=bundleInfo;
+            if(info[0].IndexOf("LuaScripts")>0)
+                Manager.Lua.LuaNames.Add(info[0]);
         }
     }
     /// <summary>
@@ -47,7 +51,7 @@ public class ResourceManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator LoadBundleAsync(string assetName, Action<UObject> action = null)
     {
-        Debug.Log("LoadBundleAsync");
+        
         string bundleName = m_BundleInfos[assetName].BundleName;
         string bundlePath = Path.Combine(PathUtil.BundleResourcePath, bundleName);
         List<string> dependences = m_BundleInfos[assetName].Dependences;
@@ -67,8 +71,10 @@ public class ResourceManager : MonoBehaviour
         //{
         //    action.Invoke(bundleRequest.asset);
         //}
+        Debug.Log("LoadBundleAsync");
         action?.Invoke(bundleRequest?.asset);
     }
+#if UNITY_EDITOR
     /// <summary>
     /// 编辑器环境加载资源
     /// </summary>
@@ -84,17 +90,17 @@ public class ResourceManager : MonoBehaviour
         }
         action?.Invoke(obj);
     }
+#endif
+
 
     private void LoadAsset(string assetName,Action<UObject>action)
     {
+#if UNITY_EDITOR
         if(AppConst.GameMode == GameMode.EditorMode)
-        {
             EditorLoadAsset(assetName, action);
-        }
         else
-        {
+#endif
             StartCoroutine(LoadBundleAsync(assetName, action));         
-        }
     }
     //Tag:卸载在那时不做
 
@@ -112,5 +118,9 @@ public class ResourceManager : MonoBehaviour
     public void LoadTest(string assetName, Action<UObject>action = null)
     {
         LoadAsset(PathUtil.GetTestPath(assetName), action);
+    }
+    public void LoadLua(string assetName, Action<UObject>action = null)
+    {
+        LoadAsset(assetName, action);
     }
 }
