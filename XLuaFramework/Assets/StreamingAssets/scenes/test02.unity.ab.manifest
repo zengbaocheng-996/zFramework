@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1895239021
+CRC: 3669387705
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f0afe478fee789db1aa9847c6e08845a
+    Hash: 92ffadb9cdf172df8e08b3a6a63454e6
   TypeTreeHash:
     serializedVersion: 2
     Hash: 646d6a2484d15baadcb44ea09e2dc908
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: f0afe478fee789db1aa9847c6e08845a
+    Hash: 92ffadb9cdf172df8e08b3a6a63454e6
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -47,4 +47,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/BuildResources/Scenes/Test02.unity
-Dependencies: []
+Dependencies:
+- F:/git/zFramework/XLuaFramework/Assets/StreamingAssets/model/test02.mat.ab

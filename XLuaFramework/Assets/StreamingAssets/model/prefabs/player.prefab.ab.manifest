@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 129726950
+CRC: 3950186972
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9b5e245b7ae051b0a90c0beff32ca544
+    Hash: ce4ae98c7fea9acdc0a5ea2b85483be0
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c9f4dcab85c22c8520e943535a0b2b0a
+    Hash: cb23c373db8092b547738c07f58cef24
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 9b5e245b7ae051b0a90c0beff32ca544
+    Hash: ce4ae98c7fea9acdc0a5ea2b85483be0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,8 +24,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
-- Class: 48
-  Script: {instanceID: 0}
 - Class: 136
   Script: {instanceID: 0}
 - Class: 143
@@ -33,4 +31,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/BuildResources/Model/Prefabs/Player.prefab
-Dependencies: []
+Dependencies:
+- F:/git/zFramework/XLuaFramework/Assets/StreamingAssets/model/player.mat.ab

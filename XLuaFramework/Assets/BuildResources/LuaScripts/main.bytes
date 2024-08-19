@@ -23,7 +23,10 @@ Manager.UI:SetUIGroup(ui_group)
 Manager.Entity:SetEntityGroup(entity_grouop)
 function Main()
     print("hello main")
-    Manager.UI:OpenUI("TestUI","UI","ui.TestUI")
+    -- Manager.UI:OpenUI("二级弹窗","UI","ui.TestUI")
+    -- Manager.UI:OpenUI("TestUI","UI","ui.TestUI")
+    -- Manager.UI:OpenUI("TestUI","Main","ui.TestUI")
+    Manager.Scene:LoadScene("Test01", "scene.Scene01")
 end
 
 --Main()

@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1397628759
+CRC: 942441348
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 52a4a91f0148af086dbcc60f4f1421f7
+    Hash: 4d887171bd97ce32c099cfa8845bba44
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5e762ccb57c4caaabbb5a4199ac82c23
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 52a4a91f0148af086dbcc60f4f1421f7
+    Hash: 4d887171bd97ce32c099cfa8845bba44
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -18,5 +18,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/BuildResources/Model/New Material.mat
+- Assets/BuildResources/Model/test01.mat
 Dependencies: []
