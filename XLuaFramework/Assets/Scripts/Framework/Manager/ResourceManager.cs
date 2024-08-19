@@ -51,7 +51,6 @@ public class ResourceManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator LoadBundleAsync(string assetName, Action<UObject> action = null)
     {
-        
         string bundleName = m_BundleInfos[assetName].BundleName;
         string bundlePath = Path.Combine(PathUtil.BundleResourcePath, bundleName);
         List<string> dependences = m_BundleInfos[assetName].Dependences;
@@ -122,5 +121,15 @@ public class ResourceManager : MonoBehaviour
     public void LoadLua(string assetName, Action<UObject>action = null)
     {
         LoadAsset(assetName, action);
+    }
+
+    public void LoadPrefab(string assetName, Action<UnityEngine.Object> action = null)
+    {
+        LoadAsset(assetName, action);
+    }    
+    
+    public void LoadScene(string assetName, Action<UnityEngine.Object> action = null)
+    {
+        LoadAsset(PathUtil.GetScenePath(assetName), action);
     }
 }

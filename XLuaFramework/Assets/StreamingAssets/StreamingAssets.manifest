@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3094777823
+CRC: 2034919113
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -12,17 +12,35 @@ AssetBundleManifest:
       Name: model/new material.mat.ab
       Dependencies: {}
     Info_3:
-      Name: luascripts/ui/testui.bytes.ab
+      Name: scenes/test01.unity.ab
       Dependencies: {}
     Info_4:
-      Name: ui/prefabs/testui.prefab.ab
+      Name: scenes/test02.unity.ab
       Dependencies: {}
     Info_5:
-      Name: "ui/prefabs/\u4E00\u7EA7\u754C\u9762.prefab.ab"
+      Name: luascripts/entity/playerentity.bytes.ab
       Dependencies: {}
     Info_6:
-      Name: "ui/prefabs/\u4E8C\u7EA7\u5F39\u7A97.prefab.ab"
+      Name: luascripts/scene/scene01.bytes.ab
       Dependencies: {}
     Info_7:
+      Name: luascripts/scene/scene02.bytes.ab
+      Dependencies: {}
+    Info_8:
+      Name: luascripts/ui/testui.bytes.ab
+      Dependencies: {}
+    Info_9:
+      Name: model/prefabs/player.prefab.ab
+      Dependencies: {}
+    Info_10:
+      Name: ui/prefabs/testui.prefab.ab
+      Dependencies: {}
+    Info_11:
+      Name: "ui/prefabs/\u4E00\u7EA7\u754C\u9762.prefab.ab"
+      Dependencies: {}
+    Info_12:
+      Name: "ui/prefabs/\u4E8C\u7EA7\u5F39\u7A97.prefab.ab"
+      Dependencies: {}
+    Info_13:
       Name: "ui/prefabs/\u8DD1\u9A6C\u706F.prefab.ab"
       Dependencies: {}
